@@ -13,18 +13,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Set up Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v4
       with:
-        node-version: '20'
+        node-version: '18'
 
     - name: Install dependencies
-      run: sudo npm install
+      run: sudo npm i --save-dev @types/node
 
     - name: Install Playwright
-      run: sudo npx playwright install
+      run: sudo npx playwright install --with-deps
 
     - name: Run tests
       run: npx playwright test
