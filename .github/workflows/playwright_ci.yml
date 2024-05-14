@@ -1,0 +1,38 @@
+name: Playwright CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: sudo npm i --save-dev @types/node
+
+    - name: Install Playwright
+      run: sudo npx playwright install --with-deps
+
+    - name: Run tests
+      run: npx playwright test
+
+    - name: Upload test results
+      uses: actions/upload-artifact@v2
+      if: failure()
+      with:
+        name: playwright-artifacts
+        path: test-results/**
+        retention-days: 7
