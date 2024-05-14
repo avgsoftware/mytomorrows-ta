@@ -18,19 +18,19 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '18'
+        node-version: '20'
 
     - name: Install dependencies
       run: sudo npm i --save-dev @types/node
 
     - name: Install Playwright
-      run: sudo npx playwright install --with-deps
+      run: npx playwright install --with-deps
 
     - name: Run tests
       run: npx playwright test
 
     - name: Upload test results
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       if: failure()
       with:
         name: playwright-artifacts
