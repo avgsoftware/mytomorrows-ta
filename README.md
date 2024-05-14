@@ -24,7 +24,7 @@ To get started with this project, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone 
+   git clone https://github.com/avgsoftware/mytomorrows-ta.git
    cd path-to-your-project
 2. Install npm 
    ```bash
