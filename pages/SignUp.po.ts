@@ -24,20 +24,20 @@ export class SignUpPage extends HomePage {
   }
 
   async clickOnEmailAddressInput(){
-    await this.page.locator( '.mat-mdc-form-field-flex' ).nth(0).locator( 'input' ).click();
+    await this.page.getByPlaceholder( 'yourname@hospital.com' ).nth(0).click();
   }
 
   async fillEmaillAddress(emailAddress: string) {
-    await this.page.locator( '.mat-mdc-form-field-flex' ).nth(0).locator( 'input' ).fill(emailAddress);
+    await this.page.getByPlaceholder( 'yourname@hospital.com' ).nth(0).fill(emailAddress);
     await this.page.waitForTimeout(1000);
   }
 
   async clickOnConfirmEmailAddressInput() {
-    await this.page.locator( '.mat-mdc-form-field-flex' ).nth(1).locator( 'input' ).click();
+    await this.page.getByPlaceholder( 'yourname@hospital.com' ).nth(1).click();
   }
 
   async fillConfirmEmailAddress(confirmEmailAddress: string) {
-    await this.page.locator( '.mat-mdc-form-field-flex' ).nth(1).locator( 'input' ).fill(confirmEmailAddress);
+    await this.page.getByPlaceholder( 'yourname@hospital.com' ).nth(1).fill(confirmEmailAddress);
     await this.page.waitForTimeout(1000);
   }
 
