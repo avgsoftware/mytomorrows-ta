@@ -20,7 +20,7 @@ const config: PlaywrightTestConfig = {
     timeout: 1000000,
     use: {
         baseURL: 'https://platform-qa.mytomorrows.com',
-        headless: false,  // Run browser in headless mode
+        headless: true,  // Run browser in headless mode
         viewport: { width: 1400, height: 900 },
         ignoreHTTPSErrors: true,
         video: 'retain-on-failure', // Record video only for failed tests
