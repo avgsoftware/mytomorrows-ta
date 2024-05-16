@@ -16,6 +16,10 @@ Created with TypeScript, and Playwright.
 - TypeScript (version used: v5.4.5)
 - Playwright (version used: v1.44.0)
 
+- Headless: true/false in playwright.config (Update accordingly)
+   ```bash
+   Currently set to headless: true so the CI runs green
+
 ## Getting Started
 
 To get started with this project, follow these steps:
